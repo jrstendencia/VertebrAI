@@ -1,0 +1,158 @@
+/* General Reset */
+body, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Dark Theme */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Styling */
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Optional: limit max width */
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 28px; /* Increased font size for title */
+}
+
+.navigation {
+    display: flex;
+    gap: 30px; /* Increased gap between links */
+}
+
+.navigation a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-size: 18px; /* Increased font size for navigation links */
+    transition: color 0.3s, transform 0.2s; /* Smooth color transition */
+}
+
+.navigation a:hover {
+    color: #63a4ff; /* Lighten color on hover */
+    transform: scale(1.05); /* Slightly scale on hover */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-hero-image-url.jpg') no-repeat center center; /* Add gradient overlay */
+    background-size: cover; /* Cover the whole section */
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px; /* Add padding for better spacing */
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 36px; /* Large font size for the main title */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.hero p {
+    font-size: 20px; /* Medium font size for subtitle */
+    margin-bottom: 20px; /* Space below subtitle */
+}
+
+.actions {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.actions li {
+    margin-top: 20px; /* Space between action buttons */
+}
+
+.actions .button {
+    padding: 12px 20px; /* Padding for button */
+    background-color: #1e90ff; /* Button color */
+    border: none;
+    color: #ffffff;
+    font-size: 18px; /* Increased font size for button */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.actions .button:hover {
+    background-color: #63a4ff; /* Lighten button color on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Page Sections */
+.page {
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto; /* Centering with margin */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #1e1e1e; /* Section background color */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    padding: 12px; /* Increased padding for better touch */
+    border: 1px solid #444; /* Slightly lighter border color */
+    border-radius: 5px; /* Rounded corners for inputs */
+    background-color: #333; /* Dark input background */
+    color: #ffffff; /* White text */
+    font-size: 16px; /* Consistent font size */
+}
+
+button {
+    padding: 12px 20px; /* Padding for buttons */
+    background-color: #1e90ff; /* Button color */
+    border: none;
+    border-radius: 5px;
+    color: #ffffff; /* Button text color */
+    font-size: 18px; /* Button font size */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+button:hover {
+    background-color: #63a4ff; /* Lighten button color on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to start */
+    }
+
+    .navigation {
+        flex-direction: column; /* Stack navigation links */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+}

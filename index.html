@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertebrae Detection System</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.page');
+            sections.forEach(section => section.classList.add('hidden'));
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        window.onload = function() {
+            showSection('login');
+        };
+
+        function handleLogin(event) {
+            event.preventDefault();
+            showSection('home');
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            showSection('home');
+        }
+
+        function logout() {
+            showSection('login');
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>VertebrAI: Vertebrae Detection System</h1>
+            </div>
+            <nav class="navigation">
+                <a href="#" onclick="showSection('home')">Home</a>
+                <a href="#" onclick="logout()">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Welcome to VertebrAI!</h2>
+        <p>Empowering Medical Professionals through Advanced Deep Learning Technology</p>
+        <button onclick="showSection('register')">Get Started</button>
+    </section>
+
+    <!-- Login Page Section -->
+    <section id="login" class="page hidden">
+        <h2>Login</h2>
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showSection('register')">Create one</a></p>
+    </section>
+
+    <!-- Register Page Section -->
+    <section id="register" class="page hidden">
+        <h2>Register</h2>
+        <form id="register-form" onsubmit="handleRegister(event)">
+            <label for="reg-username">Username:</label>
+            <input type="text" id="reg-username" name="username" required>
+            <label for="reg-email">Email:</label>
+            <input type="email" id="reg-email" name="email" required>
+            <label for="reg-password">Password:</label>
+            <input type="password" id="reg-password" name="password" required>
+            <label for="reg-confirm-password">Confirm Password:</label>
+            <input type="password" id="reg-confirm-password" name="confirm-password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="#" onclick="showSection('login')">Log in</a></p>
+    </section>
+
+    <!-- Home Page Section -->
+    <section id="home" class="page hidden">
+        <h2>VertebrAI</h2>
+        <p>This system assists medical professionals by automating Cobb angle measurements through deep learning algorithms.</p>
+        <p>Select an option from the menu to proceed:</p>
+        <button onclick="showSection('upload')">Upload Image</button>
+        <button onclick="showSection('output')">View Output</button>
+    </section>
+
+    <!-- Upload Image Section -->
+    <section id="upload" class="page hidden">
+        <h2>Upload X-ray Image</h2>
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file-input">Select X-ray image:</label>
+            <input type="file" id="file-input" name="xray-image" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+        <button onclick="showSection('home')">Back to Home</button>
+    </section>
+
+    <!-- Output Section -->
+    <section id="output" class="page hidden">
+        <h2>Analysis Output</h2>
+        <div id="output-content">
+            <p>No analysis available yet. Please upload an image for processing.</p>
+        </div>
+        <button onclick="showSection('home')">Back to Home</button>
+    </section>
+</body>
+</html>
